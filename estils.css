@@ -1,0 +1,434 @@
+/* ============================
+   RESET + BASE
+   ============================ */
+:root{
+  --bg: #0f1724;
+  --card-bg: rgba(255,255,255,0.04);
+  --glass: rgba(255,255,255,0.06);
+  --accent: #7c5cff;
+  --accent-2: #00d4ff;
+  --muted: rgba(255,255,255,0.7);
+  --glass-border: rgba(255,255,255,0.08);
+  --radius: 14px;
+  --glass-blur: 10px;
+
+  /* font stacks */
+  --font-heading: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Basic reset */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:var(--font-body);
+  background:
+    radial-gradient(1200px 600px at 10% 10%, rgba(124,92,255,0.08), transparent 6%),
+    linear-gradient(180deg, rgba(5,8,18,1), rgba(10,12,20,1));
+  color: #e9eef8;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+/* Material Icons usage */
+.material-icons-outlined{
+  font-family: 'Material Icons Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.25rem;
+  line-height: 1;
+  display:inline-block;
+  vertical-align:middle;
+  -webkit-font-feature-settings: 'liga';
+  font-feature-settings: 'liga';
+}
+
+/* ============================
+   NAVBAR (sticky glass)
+   ============================ */
+.site-header{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(var(--glass-blur));
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  border-bottom: 1px solid var(--glass-border);
+  box-shadow: 0 6px 20px rgba(2,6,23,0.6);
+}
+
+.navbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:0.75rem 1.25rem;
+  max-width:1200px;
+  margin:0 auto;
+}
+
+.brand .logo{
+  font-family:var(--font-heading);
+  text-decoration:none;
+  color:var(--accent);
+  font-weight:700;
+  letter-spacing:0.6px;
+  font-size:1.05rem;
+}
+
+/* Nav links (flexbox) */
+.nav-links{
+  display:flex;
+  gap:1rem;
+  list-style:none;
+  margin:0;
+  padding:0;
+  align-items:center;
+}
+
+.nav-links a{
+  color:var(--muted);
+  text-decoration:none;
+  padding:0.5rem 0.75rem;
+  border-radius:10px;
+  transition: color 260ms ease, background-color 260ms ease, transform 200ms ease;
+  font-weight:600;
+  font-size:0.95rem;
+}
+
+/* Hover & active */
+.nav-links a:hover{ color:#fff; transform:translateY(-2px) }
+.nav-links a.active{
+  color: #fff;
+  background: linear-gradient(90deg,var(--accent),var(--accent-2));
+  box-shadow: 0 6px 20px rgba(124,92,255,0.15), 0 1px 0 rgba(255,255,255,0.03) inset;
+}
+
+/* ============================
+   PAGE LAYOUT (Flexbox)
+   ============================ */
+.page{
+  display:flex;
+  flex-direction:column;
+  gap:2.25rem;
+  width:100%;
+  max-width:1200px;
+  margin:1.25rem auto;
+  padding:0 1rem 4rem;
+}
+
+/* HERO */
+.hero{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent 40%);
+  border-radius: var(--radius);
+  padding:2.5rem;
+  min-height:260px;
+  box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+  overflow:hidden;
+}
+
+.hero-inner{
+  display:flex;
+  flex-direction:column;
+  gap:0.75rem;
+  align-items:flex-start;
+  max-width:900px;
+  width:100%;
+}
+
+/* Hero title uses heading font */
+.hero-title{
+  font-family:var(--font-heading);
+  font-weight:800;
+  font-size:clamp(1.75rem, 4vw, 3rem);
+  margin:0;
+  letter-spacing: -0.02em;
+  line-height:1.02;
+  color: #fff;
+  transform: translateY(0);
+  /* Fallback desktop animation on load */
+  animation: slide-in 700ms cubic-bezier(.22,.9,.3,1) both;
+}
+
+.hero-title span{ color:var(--accent); }
+
+/* subtitle */
+.hero-sub{
+  margin:0;
+  color:var(--muted);
+  font-size:1rem;
+  max-width:70ch;
+}
+
+/* CTA button (has icon) */
+.cta{
+  display:inline-flex;
+  align-items:center;
+  gap:0.6rem;
+  margin-top:0.75rem;
+  padding:0.6rem 0.9rem;
+  border-radius:12px;
+  text-decoration:none;
+  background: linear-gradient(90deg,var(--accent),var(--accent-2));
+  color:#081022;
+  font-weight:700;
+  box-shadow: 0 8px 24px rgba(124,92,255,0.12);
+  transition: transform 320ms cubic-bezier(.2,.9,.4,1), box-shadow 320ms ease, filter 320ms ease;
+  /* one of the interactive transitions */
+}
+
+/* button hover effect */
+.cta:hover{
+  transform: translateY(-4px) scale(1.02);
+  filter:brightness(1.03);
+}
+
+/* ============================
+   Sub-menu (només estil) - transició color + letter-spacing
+   ============================ */
+.sub-menu{
+  display:flex;
+  justify-content:center;
+  margin:0 auto;
+}
+
+.sub-menu ul{
+  display:flex;
+  gap:1rem;
+  list-style:none;
+  margin:0;
+  padding:0.25rem;
+  backdrop-filter: blur(6px);
+}
+
+.sub-menu a{
+  display:inline-block;
+  color:var(--muted);
+  text-decoration:none;
+  padding:0.45rem 0.75rem;
+  border-radius:8px;
+  transition: color 240ms ease, letter-spacing 260ms ease, background 240ms ease;
+  font-weight:600;
+}
+
+.sub-menu a:hover{
+  color:#fff;
+  letter-spacing:1px;
+  background: rgba(255,255,255,0.02);
+}
+
+/* ============================
+   CARDS (flex row) — no grid
+   ============================ */
+.cards-section h2{ margin:0 0 0.75rem 0; font-family:var(--font-heading); font-weight:700; color:#fff; }
+
+.cards{
+  display:flex;
+  gap:1rem;
+  align-items:stretch;
+  justify-content:space-between;
+  flex-wrap:wrap;
+}
+
+/* Individual card */
+.card{
+  background: var(--card-bg);
+  border-radius:12px;
+  overflow:hidden;
+  flex:1 1 calc(33% - 0.67rem);
+  min-width:260px;
+  display:flex;
+  flex-direction:column;
+  transition: transform 360ms ease, box-shadow 360ms ease, background-color 360ms ease;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.5);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+/* CARD MEDIA: two layers (front/back) for image change */
+.card-media{
+  position:relative;
+  height:180px;
+  overflow:hidden;
+}
+
+.card .media{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition: opacity 500ms var(--timing), transform 500ms var(--timing);
+}
+
+/* front visible initially */
+.card .front{ opacity:1; transform:scale(1); }
+.card .back{ opacity:0; transform:scale(1.06); filter:brightness(0.95); }
+
+/* Card body */
+.card-body{
+  padding:1rem;
+  display:flex;
+  flex-direction:column;
+  gap:0.5rem;
+  flex-grow:1;
+}
+
+.card h3{ margin:0; font-family:var(--font-heading); font-size:1.05rem; }
+.card p{ margin:0; color:var(--muted); font-size:0.95rem; }
+
+/* Card button */
+.card-btn{
+  margin-top:auto;
+  display:inline-block;
+  align-self:flex-start;
+  padding:0.45rem 0.7rem;
+  background:transparent;
+  color:var(--accent);
+  border-radius:8px;
+  text-decoration:none;
+  border:1px solid rgba(124,92,255,0.22);
+  transition: background 260ms ease, color 260ms ease, transform 200ms ease;
+}
+
+/* Hover effects for card: change color, shadow, scale, and swap image */
+.card:hover{
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 18px 40px rgba(2,6,23,0.7);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+}
+
+/* On hover swap images */
+.card:hover .front{ opacity:0; transform:scale(0.98); }
+.card:hover .back{ opacity:1; transform:scale(1); }
+
+/* Provide different timing-functions per card (requirement) */
+.card--1 { --timing: linear; }
+.card--2 { --timing: ease; }
+.card--3 { --timing: ease-in-out; }
+
+/* Ensure at least 5 interactive transitions:
+   - nav links, cta, sub-menu links, card (transform/box-shadow), card images (opacity/transform),
+   - also .card-btn */
+.card-btn:hover{
+  background: linear-gradient(90deg,var(--accent),var(--accent-2));
+  color:#081022;
+  transform:translateY(-3px);
+}
+
+/* ============================
+   EXAMPLES (keyframes)
+   - pulse, float, slide
+   ============================ */
+.examples{ margin-top:1.5rem; }
+.example-grid{
+  display:flex;
+  gap:1rem;
+  flex-wrap:wrap;
+  margin-top:0.75rem;
+}
+
+.example{
+  min-width:120px;
+  padding:0.8rem 1rem;
+  border-radius:999px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  font-family:var(--font-heading);
+  color:var(--muted);
+  border:1px solid rgba(255,255,255,0.03);
+}
+
+/* 3 different animations via keyframes */
+@keyframes pulse {
+  0%{ transform:scale(1); opacity:1 }
+  50%{ transform:scale(1.06); opacity:0.95 }
+  100%{ transform:scale(1); opacity:1 }
+}
+@keyframes float {
+  0%{ transform:translateY(0) }
+  50%{ transform:translateY(-8px) }
+  100%{ transform:translateY(0) }
+}
+@keyframes slide {
+  0%{ transform:translateX(-18px); opacity:0 }
+  100%{ transform:translateX(0); opacity:1 }
+}
+
+/* Attach animations */
+.pulse{ animation: pulse 2.2s ease-in-out infinite; }
+.float{ animation: float 3s ease-in-out infinite; }
+.slide{ animation: slide 800ms cubic-bezier(.2,.9,.3,1) both; }
+
+/* ============================
+   SCROLL-CONTROLLED ANIMATION (experimental)
+   Try to use animation-timeline if supported; otherwise fallback to the load animation above.
+   ============================ */
+
+/* scroll-anim default fallback: already has animation: slide-in on .hero-title above */
+/* If the UA supports scroll-linked animations, this block will activate */
+@supports (animation-timeline: scroll()) {
+  /* Use the view timeline for the hero title (when it scrolls into view)
+     NOTE: syntax is new and browser support is limited, but this is provided as requested. */
+  .scroll-anim{
+    animation: fade-up 600ms linear both;
+    animation-timeline: view();
+    /* you can fine-tune animation-range in browsers that implement it */
+    animation-range: entry 0% 60%;
+  }
+}
+
+/* keyframes used by scroll animation */
+@keyframes fade-up{
+  from{ opacity:0; transform: translateY(10px) }
+  to{ opacity:1; transform: translateY(0) }
+}
+
+/* fallback slide-in used earlier */
+@keyframes slide-in {
+  from{ opacity:0; transform: translateY(12px) scale(.995) }
+  to{ opacity:1; transform: translateY(0) scale(1) }
+}
+
+/* ============================
+   RESPONSIVE (breakpoint 768px)
+   Use Flexbox rules for layout changes
+   ============================ */
+@media (max-width: 767px){
+  .navbar{ padding:0.6rem 0.8rem; }
+  .nav-links{ display:none; } /* simplified mobile nav for this example (no JS) */
+
+  .hero{ padding:1.25rem; min-height:220px; }
+  .hero-inner{ align-items:center; text-align:center; }
+
+  .cards{ flex-direction:column; }
+  .card{ flex:1 1 auto; width:100%; }
+  .card-media{ height:200px; }
+
+  .example-grid{ flex-direction:column; }
+}
+
+/* Desktop tweaks */
+@media (min-width:768px){
+  .nav-links{ display:flex; }
+  .hero-inner{ align-items:flex-start; }
+  .sub-menu{ align-self:flex-start; }
+}
+
+/* FOOTER */
+.site-footer{
+  text-align:center;
+  color:var(--muted);
+  padding:1rem 0;
+  margin-top:2rem;
+  font-size:0.95rem;
+}
