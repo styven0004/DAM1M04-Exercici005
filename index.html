@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Transicions — Exemple</title>
+
+  <!-- Preconnects + Google Fonts (2 famílies) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Poppins per títols, Inter per text -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Material Icons Outlined -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
+
+  <!-- Full CSS (separate file) -->
+  <link rel="stylesheet" href="estils.css">
+</head>
+<body>
+  <!-- NAVBAR (sticky + glass) -->
+  <header class="site-header">
+    <nav class="navbar">
+      <div class="brand">
+        <a href="#" class="logo">Brand</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#guia">Guia d’estil</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <h1 class="hero-title scroll-anim">Practica de <span>Transicions</span></h1>
+        <p class="hero-sub">Explora timing-functions, hover effects i animacions només amb CSS.</p>
+        <a class="cta" href="#cards">
+          <span class="material-icons-outlined">touch_app</span>
+          Prova-ho
+        </a>
+      </div>
+    </section>
+
+    <!-- Menú secundari (només estil) -->
+    <aside class="sub-menu" aria-label="Menú secundari">
+      <ul>
+        <li><a href="#cards">Targetes</a></li>
+        <li><a href="#examples">Exemples</a></li>
+      </ul>
+    </aside>
+
+    <!-- Targetes interactives -->
+    <section id="cards" class="cards-section">
+      <h2>Targetes interactives</h2>
+      <div class="cards">
+        <!-- Card 1: linear -->
+        <article class="card card--1">
+          <div class="card-media">
+            <img class="media front" src="assets/img/MK8D.png" alt="">
+            <img class="media back" src="assets/img/MKW.png" alt="">
+          </div>
+          <div class="card-body">
+            <h3>Linear</h3>
+            <p>transition-timing-function: linear</p>
+            <a class="card-btn" href="#">Més</a>
+          </div>
+        </article>
+
+        <!-- Card 2: ease -->
+        <article class="card card--2">
+          <div class="card-media">
+            <img class="media front" src="assets/img/DKB.png" alt="">
+            <img class="media back" src="assets/img/DKBDLC.png" alt="">
+          </div>
+          <div class="card-body">
+            <h3>Ease</h3>
+            <p>transition-timing-function: ease</p>
+            <a class="card-btn" href="#">Més</a>
+          </div>
+        </article>
+
+        <!-- Card 3: ease-in-out -->
+        <article class="card card--3">
+          <div class="card-media">
+            <img class="media front" src="assets/img/SMG.png" alt="">
+            <img class="media back" src="assets/img/SMG2.png" alt="">
+          </div>
+          <div class="card-body">
+            <h3>Ease-in-out</h3>
+            <p>transition-timing-function: ease-in-out</p>
+            <a class="card-btn" href="#">Més</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Secció addicional per animacions -->
+    <section id="examples" class="examples">
+      <h2>Exemples d'animacions</h2>
+      <div class="example-grid">
+        <div class="example pill pulse">Pulse</div>
+        <div class="example pill float">Float</div>
+        <div class="example pill slide">Slide</div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <p>Animacions © 2025</p>
+    </footer>
+  </main>
+</body>
+</html>
