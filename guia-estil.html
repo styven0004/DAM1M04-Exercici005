@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Guia d'estil — Tipografia i Icons</title>
+
+  <!-- Preconnects + Google Fonts (2 famílies) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Poppins per títols, Inter per text -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Material Icons Outlined -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
+
+  <!-- Full CSS (separate file) -->
+  <link rel="stylesheet" href="estils.css">
+</head>
+<body>
+  <!-- NAVBAR (sticky + glass) -->
+  <header class="site-header">
+    <nav class="navbar">
+      <div class="brand">
+        <a href="index.html" class="logo">Pàgina Principal</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="galeria.html">Galeria</a></li>
+        <li><a href="guia-estil.html" class="active">Guia d’estil</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <main class="page">
+    <section class="hero">
+      <div class="hero-inner">
+        <h1 class="hero-title scroll-anim">Guia d’<span>estil</span></h1>
+        <p class="hero-sub">Tipografia, Material Icons i accessibilitat.</p>
+      </div>
+    </section>
+
+    <!-- =================== SECCIONS DE GUIA ===================== -->
+
+    <!-- -------------------------------------------------------- -->
+    <!-- 1. TIPOGRAFIA (mostrari H1-H3 + paràgrafs)                -->
+    <!-- -------------------------------------------------------- -->
+    <section class="style-guide">
+      <h1 class="sg-title">Tipografia</h1>
+
+      <div class="sg-block">
+        <h2>Mostrari de fonts</h2>
+        <div class="type-samples">
+          <h1 class="h1-demo">H1 — Encapçalament Poppins extrabold</h1>
+          <h2 class="h2-demo">H2 — Subtítol Poppins bold</h2>
+          <h3 class="h3-demo">H3 — Secció Poppins semibold</h3>
+
+          <p class="p-demo">
+            Exemple de paràgraf en Inter. Line-height: 1.6. Les fonts de cos han
+            de tenir ritme i llegibilitat en blocs llargs.
+          </p>
+          <p class="p-demo small">
+            Paràgraf secundari amb menor jerarquia. Font-weight: 400. Mida: 0.95rem.
+          </p>
+        </div>
+      </div>
+
+      <!-- -------------------------------------------------------- -->
+      <!-- 2. Alineació baseline icona + text                        -->
+      <!-- -------------------------------------------------------- -->
+      <div class="sg-block">
+        <h2>Alineació a baseline</h2>
+        <p>
+          <span class="material-icons-outlined baseline-icon">home</span>
+          Text i icona comparteixen línia de base de la tipografia.
+        </p>
+      </div>
+
+      <!-- -------------------------------------------------------- -->
+      <!-- 3. Escala tipogràfica i Accessibilitat                   -->
+      <!-- -------------------------------------------------------- -->
+      <div class="sg-block">
+        <h2>Escala (rem-based) + Accessibilitat</h2>
+
+        <ul class="scale-list">
+          <li><strong>0.875rem</strong> — Text petit</li>
+          <li><strong>1rem</strong> — Body</li>
+          <li><strong>1.25rem</strong> — Subtítols</li>
+          <li><strong>1.5rem</strong> — H3</li>
+          <li><strong>2rem</strong> — H2</li>
+          <li><strong>2.5–3rem</strong> — H1</li>
+        </ul>
+
+        <p class="contrast-note">
+          ✔️ Contrast text principal (#e9eef8) sobre fons fosc (#0f1724) → AA/AAA.
+          Mida mínima de text: 0.875rem.
+        </p>
+      </div>
+
+      <!-- -------------------------------------------------------- -->
+      <!-- 4. Material Icons variacions                             -->
+      <!-- -------------------------------------------------------- -->
+      <div class="sg-block">
+        <h2>Material Icons variables</h2>
+        <div class="icon-grid">
+
+          <div class="icon-item">
+            <span class="material-icons-outlined"
+              style="font-variation-settings: 'FILL' 0, 'wght' 200, 'opsz' 20;">
+              favorite
+            </span>
+            <small>opsz 20 — wght 200 — FILL 0</small>
+          </div>
+
+          <div class="icon-item">
+            <span class="material-icons-outlined"
+              style="font-variation-settings: 'FILL' 0, 'wght' 700, 'opsz' 48;">
+              favorite
+            </span>
+            <small>opsz 48 — wght 700 — FILL 0</small>
+          </div>
+
+          <div class="icon-item">
+            <span class="material-icons-outlined"
+              style="font-variation-settings: 'FILL' 1, 'wght' 400, 'opsz' 24;">
+              favorite
+            </span>
+            <small>opsz 24 — wght 400 — FILL 1</small>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- -------------------------------------------------------- -->
+      <!-- 5. UI Buttons + links amb icona + hover                  -->
+      <!-- -------------------------------------------------------- -->
+      <div class="sg-block">
+        <h2>Botons i enllaços</h2>
+        <a href="#" class="sg-btn">
+          <span class="material-icons-outlined">download</span>
+          Descarrega
+        </a>
+
+        <a href="#" class="sg-link">
+          <span class="material-icons-outlined">link</span>
+          Documentació
+        </a>
+      </div>
+
+      <!-- -------------------------------------------------------- -->
+      <!-- 6. COLORS (HEX/RGB/HSL/ALPHA)                            -->
+      <!-- -------------------------------------------------------- -->
+      <div class="sg-block">
+        <h2>Colors</h2>
+
+        <table class="color-table">
+          <thead>
+            <tr>
+              <th>Color</th>
+              <th>HEX</th>
+              <th>RGB</th>
+              <th>HSL</th>
+              <th>Alpha</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <span class="swatch" style="background: var(--accent)"></span>
+              </td>
+              <td>#7c5cff</td>
+              <td>rgb(124,92,255)</td>
+              <td>hsl(257,100%,68%)</td>
+              <td>rgba(124,92,255,0.6)</td>
+            </tr>
+            <tr>
+              <td>
+                <span class="swatch" style="background: var(--accent-2)"></span>
+              </td>
+              <td>#00d4ff</td>
+              <td>rgb(0,212,255)</td>
+              <td>hsl(189,100%,50%)</td>
+              <td>rgba(0,212,255,0.6)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <p>Guia d’estil © 2025</p>
+    </footer>
+
+  </main>
+</body>
+</html>
