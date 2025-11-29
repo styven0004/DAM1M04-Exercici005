@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Animacions CSS - Galeria</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Material Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="estils.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar">
+    <div class="brand">
+      <a href="#" class="logo">CSS Demo</a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="galeria.html" class="active">Galeria</a></li>
+      <li><a href="guia.html">Guia d'estil</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="page">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <h1 class="hero-title scroll-anim">
+        Animacions <span>CSS</span>
+      </h1>
+      <p class="hero-sub">
+        @keyframes, variacions, delays, iteracions i animacions scroll-linked.
+      </p>
+      <a class="cta" href="#loader">
+        <span class="material-icons-outlined">animation</span>
+        Comencem
+      </a>
+    </div>
+  </section>
+
+  <!-- LOADER ===================== -->
+  <section class="cards-section" id="loader">
+    <h2>Loader pur CSS</h2>
+    <div class="examples">
+
+      <!-- Loader circular -->
+      <div class="loader-css"></div>
+
+    </div>
+  </section>
+
+  <!-- ANIMACIÓ PRINCIPAL ===================== -->
+  <section class="cards-section">
+    <h2>Peça animada principal</h2>
+    <p style="color:var(--muted); max-width:60ch">
+      Bloc amb transformacions, color i opacitat, animació en seqüència.  
+      Aquesta animació fa: bounce → rotació → canvi de color → tornada.
+    </p>
+
+    <div class="main-anim"></div>
+  </section>
+
+  <!-- SCROLL REVEAL ===================== -->
+  <section class="cards-section">
+    <h2>Scroll reveal</h2>
+    <p style="color:var(--muted); max-width:60ch">
+      Aquests blocs es revelen quan entren al viewport gràcies a
+      <code>animation-timeline:view()</code> + <code>animation-range</code>.<br>
+      Si el navegador no ho suporta, hi ha fallback.
+    </p>
+
+    <div class="scroll-blocks">
+      <div class="reveal-box">Bloc 1</div>
+      <div class="reveal-box">Bloc 2</div>
+      <div class="reveal-box">Bloc 3</div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  Fet amb CSS • Cap línia de JavaScript
+</footer>
+
+</body>
+</html>
